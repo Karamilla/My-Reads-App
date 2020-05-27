@@ -1,8 +1,8 @@
 import React from "react";
-import shelfChangerButton from "./shelfChangerButton";
+import ShelfChangerButton from "./shelfChangerButton";
 
 const BookCategory = (props) => {
-  const { shelf, imageURL, ShelfChangerButton, book, title, author } = props;
+  const { shelf, imageURL, shelfChangerButton, book, title, author } = props;
   return (
     <li>
       <div className="book">
@@ -15,9 +15,9 @@ const BookCategory = (props) => {
               backgroundImage: `url("${imageURL}")`,
             }}
           />
-          <shelfChangerButton
+          <ShelfChangerButton
             shelf={shelf}
-            ShelfChangerButton={ShelfChangerButton}
+            shelfChangerButton={shelfChangerButton}
             book={book}
           />
         </div>
