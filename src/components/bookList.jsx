@@ -11,7 +11,7 @@ const BookList = (props) => {
         author={book.authors && book.authors}
         imageURL={BookItem.imageLinks && book.imageLinks.thumbnail}
         shelf={book.shelf}
-        changeShelf={props.changeShelf}
+        shelfChangerButton={props.shelfChangerButton}
         book={book}
       />;
     });
@@ -23,7 +23,7 @@ const BookList = (props) => {
         author={book.authors && book.authors}
         imageURL={book.imageLinks && book.imageLinks.thumbnail}
         shelf={book.shelf}
-        changeShelf={props.changeShelf}
+        shelfChangerButton={props.shelfChangerButton}
         book={book}
       />
     ));
@@ -35,7 +35,7 @@ const BookList = (props) => {
         author={book.authors && book.authors}
         imageURL={book.imageLinks && book.imageLinks.thumbnail}
         shelf={book.shelf}
-        changeShelf={props.changeShelf}
+        shelfChangerButton={props.shelfChangerButton}
         book={book}
       />
     ));
