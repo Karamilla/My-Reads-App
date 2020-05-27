@@ -1,14 +1,14 @@
 import React from "react";
-import BookList from "./BookList";
+import BookList from "./bookList";
 
-const FutureReadList = ({ futureBooks, changeShelf, title }) => {
+const FutureReadList = ({ futureBooks, HandleChangerButton, title }) => {
   return (
     <div>
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
         <BookList
           futureReads={futureBooks}
-          shelfChangerButton={shelfChangerButton}
+          HandleChangerButton={HandleChangerButton}
         />
       </div>
     </div>

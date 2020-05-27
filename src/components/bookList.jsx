@@ -4,17 +4,17 @@ import BookItem from "./bookItem";
 const BookList = (props) => {
   let books;
   if (props.currentlyReading !== undefined) {
-    books = props.currentlyReading.map((book) => {
+    books = props.currentlyReading.map((book) => (
       <BookItem
         key={book.id}
         title={book.title}
         author={book.authors && book.authors}
         imageURL={BookItem.imageLinks && book.imageLinks.thumbnail}
         shelf={book.shelf}
-        shelfChangerButton={props.shelfChangerButton}
+        HandleChangerButton={props.HandleChangerButton}
         book={book}
-      />;
-    });
+      />
+    ));
   } else if (props.futureReads !== undefined) {
     books = props.futureReads.map((book) => (
       <BookItem
@@ -23,7 +23,7 @@ const BookList = (props) => {
         author={book.authors && book.authors}
         imageURL={book.imageLinks && book.imageLinks.thumbnail}
         shelf={book.shelf}
-        shelfChangerButton={props.shelfChangerButton}
+        HandleChangerButton={props.HandleChangerButton}
         book={book}
       />
     ));
@@ -35,7 +35,7 @@ const BookList = (props) => {
         author={book.authors && book.authors}
         imageURL={book.imageLinks && book.imageLinks.thumbnail}
         shelf={book.shelf}
-        shelfChangerButton={props.shelfChangerButton}
+        HandleChangerButton={props.HandleChangerButton}
         book={book}
       />
     ));

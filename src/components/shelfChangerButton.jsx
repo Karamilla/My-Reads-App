@@ -3,7 +3,7 @@ import React from "react";
 const ShelfChangerButton = (props) => {
   const handleShelfChange = (e) => {
     const shelfValue = e.target.value;
-    props.shelfChangerButton(props.book, shelfValue);
+    props.HandleChangerButton(props.book, shelfValue);
   };
   return (
     <div className="book-shelf-changer">

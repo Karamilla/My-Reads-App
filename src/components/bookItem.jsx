@@ -2,7 +2,7 @@ import React from "react";
 import ShelfChangerButton from "./shelfChangerButton";
 
 const BookCategory = (props) => {
-  const { shelf, imageURL, shelfChangerButton, book, title, author } = props;
+  const { shelf, imageURL, HandleChangerButton, book, title, author } = props;
   return (
     <li>
       <div className="book">
@@ -17,7 +17,7 @@ const BookCategory = (props) => {
           />
           <ShelfChangerButton
             shelf={shelf}
-            shelfChangerButton={shelfChangerButton}
+            HandleChangerButton={HandleChangerButton}
             book={book}
           />
         </div>
