@@ -1,8 +1,8 @@
 import React from "react";
-import ShelfChangerButton from "./shelfChangerButton";
+// IMPORT BOOKSHELF CHANGER COMPONENT TO BE RENDERED IN BOOKitem COMPONENT.
+import BookShelfChanger from "./BookShelfChanger";
 
-const BookCategory = (props) => {
-  const { shelf, imageURL, HandleChangerButton, book, title, author } = props;
+const BookItem = (props) => {
   return (
     <li>
       <div className="book">
@@ -12,20 +12,20 @@ const BookCategory = (props) => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url("${imageURL}")`,
+              backgroundImage: `url("${props.imageURL}")`,
             }}
           />
-          <ShelfChangerButton
-            shelf={shelf}
-            HandleChangerButton={HandleChangerButton}
-            book={book}
+          <BookShelfChanger
+            shelf={props.shelf}
+            changeShelf={props.changeShelf}
+            book={props.book}
           />
         </div>
-        <div className="book-title">{title}</div>
-        <div className="book-authors">{author}</div>
+        <div className="book-title">{props.title}</div>
+        <div className="book-authors">{props.author}</div>
       </div>
     </li>
   );
 };
 
-export default BookCategory;
+export default BookItem;

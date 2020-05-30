@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PlusButton = () => {
+const AddBookBtn = () => {
   return (
     <div className="open-search">
+      {/* Link to search page route */}
       <Link to="/search">
         <button>Add a book</button>
       </Link>
@@ -11,4 +12,4 @@ const PlusButton = () => {
   );
 };
 
-export default PlusButton;
+export default AddBookBtn;

@@ -1,15 +1,12 @@
 import React from "react";
-import BookList from "./bookList";
+import BookList from "./BookList";
 
-const CurrentReadList = ({ currentBooks, HandleChangerButton, title }) => {
+const CurrentReadList = ({ currentBooks, changeShelf, title }) => {
   return (
     <div>
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
-        <BookList
-          currentlyReading={currentBooks}
-          HandleChangerButton={HandleChangerButton}
-        />
+        <BookList currentlyReading={currentBooks} changeShelf={changeShelf} />
       </div>
     </div>
   );

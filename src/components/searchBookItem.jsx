@@ -1,5 +1,6 @@
 import React from "react";
-import SearchBookShelfChanger from "./searchBookShelfChange";
+// IMPORT SEARCH BOOKSHELF CHANGER COMPONENT TO BE RENDERED IN SEARCHBOOKITEM COMPONENT.
+import SearchBookShelfChanger from "./SearchBookShelfChanger";
 
 const SearchBookItem = (props) => {
   return (

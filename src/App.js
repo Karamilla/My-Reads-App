@@ -2,26 +2,31 @@ import React from "react";
 import * as BooksAPI from "./BooksAPI";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
-import SearchPage from "./components/searchPage";
-import MainPage from "./components/mainPage";
-import NotFoundPage from "./components/notFoundPage";
+import SearchPage from "./components/SearchPage";
+import MainPage from "./components/MainPage";
+import NotFoundPage from "./components/NotFoundPage";
 
 class BooksApp extends React.Component {
   state = {
     books: [],
   };
-
-  HandleChangerButton = async (book, shelf) => {
+  // Function for moving book from one shelf to another.
+  changeShelf = async (book, shelf) => {
+    // Update selected book's shelf property to value selected from select list ('currentlyReading', 'wantToRead', 'read' or 'none').
     await BooksAPI.update(book, shelf);
-    const updatedBooks = await BooksAPI.getAll();
-    this.setState({ books: updatedBooks });
+    // Return array of books after shelf property has been updated on selected books.
+    const newBooks = await BooksAPI.getAll();
+    // Update component state books property to value of newBooks.
+    this.setState(() => ({
+      books: newBooks,
+    }));
   };
-
-  async componentDidMount() {
-    const updatedBooks = await BooksAPI.getAll();
-    this.setState(() => ({ books: updatedBooks }));
+  async componentWillMount() {
+    const myBooks = await BooksAPI.getAll();
+    this.setState(() => ({
+      books: myBooks,
+    }));
   }
-
   render() {
     return (
       <div className="app">
@@ -44,7 +49,7 @@ class BooksApp extends React.Component {
             render={() => (
               <SearchPage
                 books={this.state.books}
-                changeShelfSearch={this.HandleChangerButton}
+                changeShelfSearch={this.changeShelf}
               />
             )}
           />

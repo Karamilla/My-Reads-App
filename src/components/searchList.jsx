@@ -1,5 +1,6 @@
 import React from "react";
-import SearchBookItem from "./searchBookItem";
+// IMPORT SEARCHBOOKITEM COMPONENT INTO SEARCHLIST.
+import SearchBookItem from "./SearchBookItem";
 
 const SearchList = (props) => {
   const renderResults = () => {

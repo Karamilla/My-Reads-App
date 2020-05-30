@@ -1,13 +1,16 @@
 import React from "react";
 
-const SearchBookShelfChanger = (props) => {
+const BookShelfChanger = (props) => {
+  // Function to execute upon select list change.
   const onShelfChange = (evt) => {
+    // return currently selected value from select list element.
     const shelfValue = evt.target.value;
-    props.changeShelfSearch(props.result, shelfValue);
+    // Call changeShelf function located in BookApp parent component.
+    props.changeShelf(props.book, shelfValue);
   };
   return (
     <div className="book-shelf-changer">
-      <select value={props.result.shelf} onChange={onShelfChange}>
+      <select value={props.shelf} onChange={onShelfChange}>
         <option value="move" disabled>
           Move to...
         </option>
@@ -20,4 +23,4 @@ const SearchBookShelfChanger = (props) => {
   );
 };
 
-export default SearchBookShelfChanger;
+export default BookShelfChanger;
