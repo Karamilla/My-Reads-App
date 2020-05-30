@@ -9,7 +9,7 @@ const BookList = (props) => {
         key={book.id}
         title={book.title}
         author={book.authors && book.authors}
-        imageURL={BookItem.imageLinks && book.imageLinks.thumbnail}
+        imageURL={book.imageLinks && book.imageLinks.thumbnail}
         shelf={book.shelf}
         HandleChangerButton={props.HandleChangerButton}
         book={book}
