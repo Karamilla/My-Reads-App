@@ -44,7 +44,7 @@ class BooksApp extends React.Component {
             render={() => (
               <SearchPage
                 books={this.state.books}
-                changeShelfSearch={this.changeShelf}
+                changeShelfSearch={this.HandleChangerButton}
               />
             )}
           />
